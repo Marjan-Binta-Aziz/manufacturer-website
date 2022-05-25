@@ -14,7 +14,7 @@ const PurchaseModal = ({tool,setTool}) => {
             bookingId: _id,
             tool: name,
             price: price,
-            quantity: orderQuantity,
+            quantity: newQuantity,
             name: user.displayName,
             email: user.email,
             address: e.target.address.value,
