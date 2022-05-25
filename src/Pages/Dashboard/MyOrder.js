@@ -4,9 +4,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import ConfirmModal from "../Components/ConfirmModal";
-import Loading from "../Components/Loading";
-import auth from "../firebase.init";
+import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
+import ConfirmModal from "./ConfirmModal";
 
 const MyOrder = () => {
   const [authUser] = useAuthState(auth);

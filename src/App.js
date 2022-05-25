@@ -26,7 +26,8 @@ function App() {
         <Route path="/review" element={<AddReview></AddReview>}></Route>
         {/* ======Dashboard====== */}
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
-          <Route path="/my-order" element={<MyOrder></MyOrder>}></Route>
+          <Route index element={<MyOrder></MyOrder>}></Route>
+          {/* <Route path="/my-order" element={<MyOrder></MyOrder>}></Route> */}
         </Route>
       </Routes>
     </div>
