@@ -78,7 +78,7 @@ const Navbar = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to="/" className="font-bold normal-case text-2xl ml-40">Brushy Bd</Link>
+          <Link to="/" className="font-bold normal-case text-2xl ml-40">Brush to Rush </Link>
         </div>
         <Link className="w-32 ml-56" to='/'>
           <img className="ml-7" src="https://i.ibb.co/ncrnV11/logo.png" alt="logo" /> </Link>

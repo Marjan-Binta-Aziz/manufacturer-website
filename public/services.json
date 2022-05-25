@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "name": "Pro Grade - Paint Brushes Flat Brushes",
+        "price": "12.99",
+        "description": "This 2-pack of 3' flat brushes is great for all different professional and home painting projects. A thick synthetic filament blend holds more paint for saving time and fewer streaks in the finish.",
+        "img": "https://rukminim1.flixcart.com/image/612/612/kialrww0-0/paint-brush/5/a/h/6-pc-colorful-paint-brush-nail-brush-art-artistic-brush-water-original-imafy4cfchkpgzgg.jpeg?q=70",
+        "quantity" : 150,
+        "type":	"Synthetic"
+    },
+    {
+        "id": 2,
+        "name": "Basics Master Pro Paint Brush Set - 3 brushes",
+        "price": 23.23,
+        "description": "Polyester-blend bristles: soft, yet firm and flexible with a tapered and tipped (flagged) design; holds an ample amount of paint for enhanced efficiency and provides a smoother stroke. Versatile: suitable for all types of paints, stains, and finishes; ",
+        "img": "https://rukminim1.flixcart.com/image/832/832/kn97te80/paint-brush/j/m/g/artist-quality-oil-painting-tool-kit-with-flat-and-round-hog-original-imagfzam3rfzsgws.jpeg?q=70",
+        "quantity" : 200,
+        "type":	"stainless steel"
+    },
+    {
+        "id": 3,
+        "name": "Finest Finish Mini Roller (High-Density Foam)",
+        "price": "45.55",
+        "description": "Perfect for glossy paints (enamels), urethanes, varnishes, primers and stains Applies a lint-free, spray-like inish Ideal for doors, cabinets and floors 6 Finest Finish Mini Rollerfaint for saving time and fewer streaks in the finishvvvv",
+        "img": "https://rukminim1.flixcart.com/image/612/612/kwgpz0w0/paint-brush/a/z/z/round-painting-brush-set-12-pieces-for-acrylic-watercolor-original-imag9596vhvz3huh.jpeg?q=70",
+        "quantity" : 700,
+        "type":	"Foam"
+    },
+    {
+        "id": 4,
+        "name": "Paint Brush for Applying Paint or Sometimes Ink",
+        "price": "66",
+        "description": "Product is made of imported paint brush filament material, the remanded paint brush filament for superb paint finish, compared to local made filaments.",
+        "img": "https://fixit.com.bd/wp-content/uploads/2021/11/n-brush-nowww-1.jpg",
+        "quantity" : 150,
+        "type":	"Synthetic"
+    },
+    {
+        "id": 5,
+        "name": "Small Paint Brush and Round Ultra Series ",
+        "price": "30",
+        "description": "5 Pcs Painting Brush Set,Eastern Eagle Professional Fine Tip Painting Kit,Detailing Brush for Painting and Drawing Brush for Fine Detailing,Detailing Acrylic Oil Watercolor",
+        "img": "https://fixit.com.bd/wp-content/uploads/2021/12/10-024.jpg",
+        "quantity" : 700,
+        "type":	"Synthetic"
+    },
+    {
+        "id": 6,
+        "name": "Round Painting Brush Set Bleached",
+        "price": "239.88",
+        "description": "used for applying fine details and embellishments as well as large coats of paint. paint brush set works well with all paint types like Watercolors, Oils, Gouache & Acrylics.",
+        "img": "https://rukminim1.flixcart.com/image/832/832/jx257680/paint-brush/n/r/s/artist-painting-brushes-set-12-pcs-ofixo-original-imafgzpg6euhvm82.jpeg?q=70",
+        "quantity" : 600,
+        "type":	"Wood"
+    },
+    {
+        "id": 7,
+        "name": "Painting Brush Flat Set(Orange Black)",
+        "price": "100.99",
+        "description": "A Complete Set This set is practically a full range of paintbrushes of various sizes made for detail work. These can be ",
+        "img": "https://rukminim1.flixcart.com/image/832/832/kzd147k0/paint-brush/f/3/o/painting-brush-flat-and-round-ultra-series-set-of-8-with-free-original-imagbdvuvb5vnze3.jpeg?q=70",
+        "quantity" : 300,
+        "type":	"Synthetic"
+    },
+    {
+        "id": 8,
+        "name": "Mix Exotic Full Toolkit Paint Brush Roller",
+        "price": "509.99",
+        "description": "Naturally balanced solid wooden handles for comfort and ease of movement. Offers More Control of the Brush While Painting Close to the Canvas. Give You Greater Precision and Control for Finely Detailed Work. ",
+        "img": "https://rukminim1.flixcart.com/image/832/832/l1xwqkw0/paint-brush/w/o/w/mix-exotic-full-toolkit-paint-brush-roller-and-knife-for-acrylic-original-imagdebz7n8m7kgr.jpeg?q=70",
+        "quantity" : 400,
+        "type":	"ALLUMINIUM"
+    },
+    {
+        "id": 9,
+        "name": "Wooden Stencil Brushes in Pure Natural Hog Hair ",
+        "price": "209.99",
+        "description": "ach carefully designed,with smooth wooden handle which makes for a comfortable grip while stenciling and providing the perfect combination between balance and comfort,",
+        "img": "https://rukminim1.flixcart.com/image/832/832/l12h1u80/paint-brush/i/i/u/set-of-3-wooden-stencil-brushes-in-pure-natural-hog-hair-original-imagcptzwrrdy3qb.jpeg?q=70",
+        "quantity" : 900,
+        "type":	"NYLON"
+    }
+]
