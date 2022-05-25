@@ -14,28 +14,25 @@ const MyOrder = () => {
   const [modal, setModal] = useState(false);
   const [deleteId, setDeleteId] = useState("");
   const {
-    data: purchasedItems,
+    data: bookingItems,
     isLoading,
     refetch,
   } = useQuery(["purchased", authUser], () =>
-    fetch(
-      `http://localhost:5000/bookingByEmail?email=${authUser?.email}`,
-      {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    ).then((res) => {
+    fetch(`http://localhost:5000/bookingByEmail?email=${authUser?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => {
       if (res.status === 200) {
         return res.json();
       } else {
         localStorage.removeItem("accessToken");
         signOut(auth);
-        navigate("/login");
+        navigate("/signIn");
         Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: `${res.statusText} Access!!! Please Login again`,
+          icon: "error",
+          title: "Oops...",
+          text: `${res.statusText} Access!!! Please Login again`,
         });
       }
     })
@@ -81,11 +78,11 @@ const MyOrder = () => {
               </tr>
             </thead>
             <tbody>
-              {purchasedItems &&
-                purchasedItems.map((item, key) => (
+              {bookingItems &&
+                bookingItems.map((item, key) => (
                   <tr key={key}>
                     <th>{key + 1}</th>
-                    <td className=" capitalize">{item.partsName}</td>
+                    <td className=" capitalize">{item.toolsName}</td>
                     <td>{item.quantity} pcs</td>
                     <td>{item.price} tk</td>
                     <td>

@@ -18,7 +18,7 @@ const ConfirmModal = ({ handleDelete, setModal }) => {
           >
             ✕
           </label>
-          <p className="py-4 text-center text-xl text-white">Are you sure?</p>
+          <p className="py-4 text-center text-xl text-primary">Are you sure?</p>
           <div className=" text-center mt-5">
             <button
               onClick={() => {

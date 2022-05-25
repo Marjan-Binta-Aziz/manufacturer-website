@@ -8,11 +8,11 @@ import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
   const [authUser] = useAuthState(auth);
-  const [isAdmin, loading] = useAdmin(authUser);
+//   const [isAdmin, loading] = useAdmin(authUser);
 
-  if (loading) {
-    <Loading />;
-  }
+//   if (loading) {
+//     <Loading />;
+//   }
 
   // const {
   //   data: user,
@@ -20,7 +20,7 @@ const Dashboard = () => {
   //   error,
   // } = useQuery(["usersByEmail", authUser?.email], () =>
   //   fetch(
-  //     `https://damp-eyrie-12250.herokuapp.com/usersByEmail?email=${authUser?.email}`
+  //     `http://localhost:5000/usersByEmail?email=${authUser?.email}`
   //   ).then((res) => res.json())
   // );
 
@@ -50,7 +50,27 @@ const Dashboard = () => {
             <li>
               <Link to="/dashboard">My Profile</Link>
             </li>
-            {isAdmin || (
+            <li>
+              <Link to="/dashboard/my-order">My Order</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/add-review">Add Review</Link>
+            </li>
+
+            <li>
+              <Link to="/dashboard/manage-order">Manage All Order</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/add-product">Add Product</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/make-admin">Make Admin</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/manage-product">Manage Product</Link>
+            </li>
+
+            {/*   {isAdmin || (
               <>
                 <li>
                   <Link to="/dashboard/my-order">My Order</Link>
@@ -74,8 +94,7 @@ const Dashboard = () => {
                 <li>
                   <Link to="/dashboard/manage-product">Manage Product</Link>
                 </li>
-              </>
-            )}
+              </> */}
           </ul>
         </div>
       </div>

@@ -7,7 +7,7 @@ import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 const Purchase = () => {
   const [disable, setDisable] = useState(false);
-  const [user] = useAuthState(auth);
+  const [authUser] = useAuthState(auth);
   const [quantity, setQuantity] = useState(null);
   const [loading, setLoading] = useState(false);
   const { toolsId } = useParams();
@@ -25,8 +25,8 @@ const Purchase = () => {
     const minQ = parseInt(tools.min_ord_quantity);
     const maxQ = parseInt(tools.quantity);
     if (quantity >= minQ && quantity <= maxQ) {
-      const userName = user.displayName;
-      const email = user.email;
+      const userName = authUser.displayName;
+      const email = authUser.email;
       const mobile = event.target.mobile.value;
       const address = event.target.address.value;
       const toolsId = tools._id;
@@ -82,15 +82,15 @@ const Purchase = () => {
   }
 
   return (
-    <div className="flex justify-center px-5 min-h-screen">
-      <div>
+    <div className="pt-5 justify-center px-5 mx-32 min-h-screen">
         <h2 className=" text-center text-primary text-4xl mb-5 uppercase">
           Purchase here
         </h2>
-        <div className="card w-fit bg-base-100 shadow-xl">
+      <div className="flex flex-row-reverse lg:col-span-2 sm:col-span-1">
+        <div className="card w-fit h-fit bg-base-100 shadow-xl">
           <div className="card-body">
             <h2 className=" text-2xl font-bold">Name: {tools.name}</h2>
-            <p>Desc: {tools.desc}</p>
+            <p>Description: {tools.description}</p>
             <p>Minimum_Order_quantity: {tools.min_ord_quantity}</p>
             <p>Available_Quantity: {tools.quantity}</p>
             <p>Price_Per_piece: {tools.price}</p>
@@ -109,9 +109,9 @@ const Purchase = () => {
               <input
                 required
                 type="text"
-                value={user?.displayName}
+                value={authUser?.displayName}
                 disabled
-                className="input input-bordered input-primary w-full max-w-lg"
+                className="input input-bordered input-primary w-full max-w-lg input-sm"
               />
             </div>
             <div className="form-control w-full max-w-lg mt-1">
@@ -121,9 +121,9 @@ const Purchase = () => {
               <input
                 required
                 type="email"
-                value={user.email}
+                value={authUser?.email}
                 disabled
-                className="input input-bordered input-primary w-full max-w-lg"
+                className="input input-bordered input-primary w-full max-w-lg input-sm"
               />
             </div>
             <div className="form-control w-full max-w-lg mt-1">
@@ -140,7 +140,7 @@ const Purchase = () => {
                 }}
                 defaultChecked={parseInt(tools.min_ord_quantity)}
                 placeholder={`min Quantity: ${tools.min_ord_quantity}`}
-                className="input input-bordered input-primary w-full max-w-lg"
+                className="input input-bordered input-primary w-full max-w-lg input-sm"
               />
             </div>
             <div className="form-control w-full max-w-lg mt-1">
@@ -152,7 +152,7 @@ const Purchase = () => {
                 type="text"
                 name="mobile"
                 placeholder="+880"
-                className="input input-bordered input-primary w-full max-w-lg"
+                className="input input-bordered input-primary w-full max-w-lg input-sm"
               />
             </div>
             <div className="form-control w-full max-w-lg mt-1">
@@ -162,13 +162,13 @@ const Purchase = () => {
               <textarea
                 required
                 name="address"
-                className="textarea textarea-primary"
+                className="textarea input-sm textarea-primary"
                 placeholder=""
               ></textarea>
             </div>
             <button
               disabled={disable}
-              className={` btn btn-primary mt-10 w-full ${
+              className={` btn btn-primary mt-5 w-full ${
                 loading && "loading"
               }`}
             >

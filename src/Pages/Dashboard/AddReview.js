@@ -10,7 +10,7 @@ import { Rating } from "react-simple-star-rating";
 
 const AddReview = () => {
   const [rating, setRating] = useState(1); // initial rating value
-  const [user] = useAuthState(auth);
+  const [authUser] = useAuthState(auth);
   const [success, setSuccess] = useState(false);
   const { register, handleSubmit } = useForm();
   // Catch Rating value
@@ -26,8 +26,8 @@ const AddReview = () => {
       );
     } else {
       data.rating = rating;
-      if (user.photoURL) {
-        data.img = user.photoURL;
+      if (authUser.photoURL) {
+        data.img = authUser.photoURL;
       } else {
         data.img =
           "https://i.ibb.co/ZJPQfBr/115-1150152-default-profile-picture-avatar-png-green.jpg";
@@ -78,7 +78,7 @@ const AddReview = () => {
               type='text'
               className="input input-bordered input-secondary input-sm w-full max-w-xs mt-4"
               id='floatingInput'
-              value={user?.displayName}
+              value={authUser?.displayName}
               {...register("Name")}
               required
             />
@@ -87,7 +87,7 @@ const AddReview = () => {
           <div className='mb-3'>
             <input
               type='email'
-              value={user.email}
+              value={authUser.email}
               className="input input-bordered input-secondary input-sm w-full max-w-xs mt-4"
               id='floatingInput'
               {...register("Email")}

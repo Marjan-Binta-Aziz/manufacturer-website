@@ -7,12 +7,12 @@ import auth from "../../firebase.init";
 const Navbar = () => {
   // sign up ta k dynamic korar jonno
   const navigate = useNavigate();
-  const [user, loading, error] = useAuthState(auth);
+  const [authUser, loading, error] = useAuthState(auth);
 
   const logout = () => {
     signOut(auth);
     localStorage.removeItem('accessToken')
-    navigate('/login')
+    navigate('/signIn')
   };
 
   const menuItems = (
@@ -30,16 +30,16 @@ const Navbar = () => {
         <Link to="/about">About</Link>
       </li>
       <li>
-        {user && <Link to="/dashboard">DashBoard</Link>}
+        {authUser && <Link to="/dashboard">DashBoard</Link>}
       </li>
       <li>
-        {user ? <>
+        {authUser ? <>
           <button className="ml-0" onClick={logout}>Sign Out</button>
-          <label class="btn btn-ghost btn-circle avatar w-32 flex flex-nowrap ">
-          <small className="font-semibold p-2 rounded-3xl"> {user.displayName}
+          <label className="btn btn-ghost btn-circle avatar w-32 flex flex-nowrap ">
+          <small className="font-semibold p-2 rounded-3xl"> {authUser.displayName}
           </small>
-        <div class="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-          <img src="https://api.lorem.space/image/face?hash=33791" />
+        <div className="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+          <img src="https://api.lorem.space/image/face?hash=33791" alt="ty"/>
         </div>
       </label>
         </>
