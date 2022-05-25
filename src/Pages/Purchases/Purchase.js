@@ -115,6 +115,7 @@ const Purchase = () => {
               <input
                 required
                 type="email"
+                
                 value={authUser?.email}
                 disabled
                 className="input input-bordered input-primary w-full max-w-lg input-sm my-3"
