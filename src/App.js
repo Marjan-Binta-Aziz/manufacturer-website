@@ -1,4 +1,3 @@
-
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Homepage/Home";
@@ -24,14 +23,11 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/signIn" element={<SignIn></SignIn>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
-        <Route
-          path="/purchase/:toolsId"
-          element={<Purchase></Purchase>}
-        ></Route>
+        <Route path="/purchase/:toolId" element={<Purchase></Purchase>}></Route>
         {/* <Route path="/review" element={<AddReview></AddReview>}></Route> */}
         {/* ======Dashboard====== */}
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
-        {/* <Route index element={<MyProfile></MyProfile>} />
+          {/* <Route index element={<MyProfile></MyProfile>} />
           <Route path="my-order" element={<MyOrder></MyOrder>}></Route>
           <Route path="make-admin" element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path="manage-product" element={<ManageProducts></ManageProducts>}></Route>

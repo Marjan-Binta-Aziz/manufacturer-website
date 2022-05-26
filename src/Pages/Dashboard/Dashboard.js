@@ -38,7 +38,7 @@ const Dashboard = () => {
         <div className="drawer-content mt-10 lg:mt-16">
           <label
             htmlFor="my-drawer-2"
-            className="btn btn-sm btn-primary drawer-button  lg:hidden flex mb-5"
+            className="btn btn-sm btn-primary drawer-button lg:hidden flex mb-5"
           >
             Open Sidebar
           </label>
@@ -47,14 +47,14 @@ const Dashboard = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content">
+            <li>
+              <Link to="/dashboard/add-review">Add Review</Link>
+            </li>
             {/* <li>
               <Link to="/dashboard">My Profile</Link>
             </li>
             <li>
               <Link to="/dashboard/my-order">My Order</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/add-review">Add Review</Link>
             </li>
 
             <li>

@@ -12,8 +12,8 @@ const ToolsService = ({tool}) => {
         <div className=''>
         <div className="card lg:max-w-lg bg-base-100 shadow-xl h-full">
             <div className="card-body text-center">
-            <figure class="px-10 pt-10">
-                <img src={img} alt="Tools"class="rounded-xl w-48 h-56" />
+            <figure className="px-10 pt-10">
+                <img src={img} alt="Tools"className="rounded-xl w-48 h-56" />
             </figure>
             <div className='px-10 pt-5'>
             <h2 className="text-center text-2xl font-bold text-primary">{name}</h2>
