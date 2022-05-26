@@ -47,7 +47,7 @@ const Dashboard = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content">
-            <li>
+            {/* <li>
               <Link to="/dashboard">My Profile</Link>
             </li>
             <li>
@@ -68,7 +68,7 @@ const Dashboard = () => {
             </li>
             <li>
               <Link to="/dashboard/manage-product">Manage Product</Link>
-            </li>
+            </li> */}
 
             {/*   {isAdmin || (
               <>

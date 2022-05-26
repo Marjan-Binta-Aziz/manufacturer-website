@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Homepage/Home";
@@ -6,14 +6,14 @@ import Navbar from "./Pages/Homepage/Navbar";
 import SignIn from "./Pages/User/SignIn";
 import SignUp from "./Pages/User/SignUp";
 import Purchase from "./Pages/Purchases/Purchase";
-import AddReview from "./Pages/Dashboard/AddReview";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import MyOrder from "./Pages/Dashboard/MyOrder";
-import MyProfile from "./Pages/Dashboard/MyProfile";
-import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
-import ManageProducts from "./Pages/Dashboard/ManageProducts";
-import AddProduct from "./Pages/Dashboard/AddProducts";
-import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders";
+// import AddReview from "./Pages/Dashboard/AddReview";
+// import MyOrder from "./Pages/Dashboard/MyOrder";
+// import MyProfile from "./Pages/Dashboard/MyProfile";
+// import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
+// import ManageProducts from "./Pages/Dashboard/ManageProducts";
+// import AddProduct from "./Pages/Dashboard/AddProducts";
+// import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders";
 
 function App() {
   return (
@@ -28,15 +28,15 @@ function App() {
           path="/purchase/:toolsId"
           element={<Purchase></Purchase>}
         ></Route>
-        <Route path="/review" element={<AddReview></AddReview>}></Route>
+        {/* <Route path="/review" element={<AddReview></AddReview>}></Route> */}
         {/* ======Dashboard====== */}
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
-        <Route index element={<MyProfile></MyProfile>} />
+        {/* <Route index element={<MyProfile></MyProfile>} />
           <Route path="my-order" element={<MyOrder></MyOrder>}></Route>
           <Route path="make-admin" element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path="manage-product" element={<ManageProducts></ManageProducts>}></Route>
           <Route path="add-product" element={<AddProduct></AddProduct>}></Route>
-          <Route path="manage-order" element={<ManageAllOrders></ManageAllOrders>}></Route>
+          <Route path="manage-order" element={<ManageAllOrders></ManageAllOrders>}></Route> */}
         </Route>
       </Routes>
     </div>
