@@ -25,7 +25,7 @@ const Purchase = () => {
     const minQuantity = parseInt(data.min_ord_quantity);
     const maxQuantity = parseInt(data.quantity);
     if (quantity >= minQuantity && quantity <= maxQuantity) {
-      const Name = user.displayName;
+      const userName = user.displayName;
       const email = user.email;
       const phone = event.target.phone.value;
       const address = event.target.address.value;
@@ -35,7 +35,7 @@ const Purchase = () => {
       const price = parseInt(quantity) * parseInt(data.price);
 
       const payment = {
-        Name,
+        userName,
         email,
         toolId,
         toolsName,

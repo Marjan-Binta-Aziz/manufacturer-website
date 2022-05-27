@@ -13,6 +13,7 @@ import AllUser from "./Pages/Dashboard/AllUser";
 import MyOrder from "./Pages/Dashboard/MyOrder";
 import ManageOrder from "./Pages/Dashboard/ManageOrder";
 import MyProfile from "./Pages/Dashboard/MyProfile";
+import UpdateProfile from "./Pages/Dashboard/UpdateProfile";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
 
         <Route index element={<MyProfile></MyProfile>} />
+        <Route path="updateProfile" element={<UpdateProfile></UpdateProfile>}></Route>
         <Route path="manageOrder" element={<ManageOrder></ManageOrder>}></Route>
         <Route path="myOrder" element={<MyOrder></MyOrder>}></Route>
         <Route path="allUser" element={<AllUser></AllUser>}></Route>
