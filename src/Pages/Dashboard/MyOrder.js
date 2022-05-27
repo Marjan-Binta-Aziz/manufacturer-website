@@ -2,7 +2,7 @@ import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
@@ -70,7 +70,7 @@ const MyOrder = ({refetch, isLoading}) => {
 
   return (
     <div className=" flex justify-center">
-      <div className=" wfu">
+      <div className=" w-full">
         <h2 className=" text-center text-primary text-4xl mb-5 uppercase">
           My Order
         </h2>
@@ -82,46 +82,43 @@ const MyOrder = ({refetch, isLoading}) => {
                 <th>Name</th>
                 <th>Quantity</th>
                 <th>Total Price</th>
-                <th>Status</th>
+                <th>Payment Status</th>
               </tr>
             </thead>
             <tbody>
               {myOrder &&
-                myOrder.map((item, key) => (
+                myOrder.map((myOrder, key) => (
                   <tr key={key}>
                     <th>{key + 1}</th>
-                    <td className=" capitalize">{item.toolsName}</td>
-                    <td>{item.quantity} pcs</td>
-                    <td>{item.price} tk</td>
+                    <td className=" capitalize">{myOrder.toolsName}</td>
+                    <td>{myOrder.quantity} pcs</td>
+                    <td>{myOrder.price} tk</td>
                     <td>
-                      {item.paymentId ? (
-                        <>
-                          <p className=" text-success">Paid</p>{" "}
-                          <small>{item.paymentId}</small>
-                        </>
-                      ) : (
-                        <>
-                          <button
-                            onClick={() => {
-                              navigate(`/dashboard/payment/${item._id}`);
-                            }}
-                            className="btn btn-success btn-xs text-white mr-5"
-                          >
-                            Pay
-                          </button>
-                          <label
-                            htmlFor="delete-modal"
-                            onClick={() => {
-                              setModal(true);
-                              setDeleteId(item._id);
-                            }}
-                            className="btn btn-error btn-xs text-white"
-                          >
-                            Cancel
-                          </label>
-                        </>
-                      )}
+                    {(myOrder.price && !myOrder.paid) ? (
+                      <>
+                    <Link to={`/dashboard/payment/${myOrder._id}`} > 
+                    <button className='btn btn-xs btn-error'>Pay</button></Link> {" "}
+
+                    <label
+                     htmlFor="delete-modal"
+                     onClick={() => {
+                       setModal(true);
+                       setDeleteId(myOrder._id);
+                     }}
+                     className="btn btn-error btn-xs text-white"
+                   >
+                     Cancel
+                   </label>
+                      </>
+                    ):
+                    <div>
+                      <p><span className='btn btn-xs btn-success'>Paid</span></p>
+                      <small><b>Transaction id: </b><i className="text-red-600">{myOrder.transactionId}</i></small>
+                    </div>
+
+                  }
                     </td>
+
                   </tr>
                 ))}
             </tbody>

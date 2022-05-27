@@ -14,6 +14,7 @@ import MyOrder from "./Pages/Dashboard/MyOrder";
 import ManageOrder from "./Pages/Dashboard/ManageOrder";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import UpdateProfile from "./Pages/Dashboard/UpdateProfile";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="manageTool" element={<ManageTool></ManageTool>}></Route>
           <Route path="addTool" element={<AddaNewTool></AddaNewTool>}></Route>
           <Route path="addReview" element={<AddReview></AddReview>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
         </Route>
       </Routes>
     </div>
