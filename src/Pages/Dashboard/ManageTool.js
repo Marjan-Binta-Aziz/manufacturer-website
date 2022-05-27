@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
+import DeleteModal from "./DeleteModal";
 
 const ManageTool = () => {
   const [modal, setModal] = useState(false);
@@ -41,7 +42,7 @@ const ManageTool = () => {
   return (
     <div className=" flex justify-center">
       <div className=" lg:pl-5 w-full">
-        <h2 className=" text-center text-primary text-4xl mb-5 uppercase">
+        <h2 className=" text-center text-primary text-4xl mb-5">
           Manage product
         </h2>
         <div className="overflow-x-auto w-full">
@@ -65,7 +66,7 @@ const ManageTool = () => {
                     <td>{item.price}$</td>
                     <td>
                       <label
-                        htmlFor="confirmation-modal"
+                        htmlFor="delete-modal"
                         onClick={() => {
                           setModal(true);
                           setDeleteId(item._id);
@@ -80,7 +81,9 @@ const ManageTool = () => {
             </tbody>
           </table>
         </div>
-        
+         {modal && (
+          <DeleteModal setModal={setModal} handleDelete={handleDelete} />
+        )} 
       </div>
     </div>
   );

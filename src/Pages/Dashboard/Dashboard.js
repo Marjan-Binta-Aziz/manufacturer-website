@@ -55,14 +55,14 @@ const Dashboard = () => {
               <Link to="/dashboard/addReview">Add Review</Link>
             </li>
             <li>
+              <Link to="/dashboard/addTool">Add a New Tool</Link>
+            </li>
+            <li>
               <Link to="/dashboard/myOrder">My Order</Link>
             </li>
 
             <li>
               <Link to="/dashboard/manageOrder">Manage All Order</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/addTool">Add a New Tool</Link>
             </li>
             <li>
               <Link to="/dashboard/makeAdmin">Make Admin</Link>
