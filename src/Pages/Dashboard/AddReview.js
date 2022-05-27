@@ -77,7 +77,7 @@ const AddReview = () => {
           <div className='mb-3'>
             <input
               type='text'
-              className="input input-bordered input-secondary input-sm w-full max-w-xs mt-4"
+              className="input input-bordered input-primary input-sm w-full max-w-xs mt-2"
               id='floatingInput'
               value={authUser?.displayName}
               {...register("Name")}
@@ -89,7 +89,7 @@ const AddReview = () => {
             <input
               type='email'
               value={authUser?.email}
-              className="input input-bordered input-secondary input-sm w-full max-w-xs mt-4"
+              className="input input-bordered input-primary input-sm w-full max-w-xs mt-2"
               id='floatingInput'
               {...register("Email")}
               required
@@ -100,7 +100,7 @@ const AddReview = () => {
             <input
               type='text'
               placeholder="Message"
-              className="input input-bordered input-secondary input-sm w-full max-w-xs mt-4"
+              className="input input-bordered input-primary input-sm w-full max-w-xs mt-2"
               id='floatingInput'
               {...register("message")}
               required
@@ -108,7 +108,7 @@ const AddReview = () => {
           </div>
 
           <input
-            className='btn btn-success px-3'
+            className='btn btn-primary px-3'
             type='submit'
             value='Add Feedback'
           />

@@ -44,31 +44,32 @@ const Dashboard = () => {
           </label>
           <Outlet />
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content">
+          <ul className="menu p-4 overflow-y-auto w-60 bg-slate-100 rounded-2xl text-base-content">
+        
             <li>
-              <Link to="/dashboard/addReview">Add Review</Link>
-            </li>
-            {/* <li>
               <Link to="/dashboard">My Profile</Link>
             </li>
             <li>
-              <Link to="/dashboard/my-order">My Order</Link>
+              <Link to="/dashboard/addReview">Add Review</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/myOrder">My Order</Link>
             </li>
 
             <li>
-              <Link to="/dashboard/manage-order">Manage All Order</Link>
+              <Link to="/dashboard/manageOrder">Manage All Order</Link>
             </li>
             <li>
-              <Link to="/dashboard/add-product">Add Product</Link>
+              <Link to="/dashboard/addTool">Add a New Tool</Link>
             </li>
             <li>
-              <Link to="/dashboard/make-admin">Make Admin</Link>
+              <Link to="/dashboard/makeAdmin">Make Admin</Link>
             </li>
             <li>
-              <Link to="/dashboard/manage-product">Manage Product</Link>
-            </li> */}
+              <Link to="/dashboard/manageTool">Manage Tool</Link>
+            </li>
 
             {/*   {isAdmin || (
               <>

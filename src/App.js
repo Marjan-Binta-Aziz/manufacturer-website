@@ -7,6 +7,7 @@ import SignUp from "./Pages/User/SignUp";
 import Purchase from "./Pages/Purchases/Purchase";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AddReview from "./Pages/Dashboard/AddReview";
+import AddaNewTool from "./Pages/Dashboard/AddaNewTool";
 // import MyOrder from "./Pages/Dashboard/MyOrder";
 // import MyProfile from "./Pages/Dashboard/MyProfile";
 // import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
@@ -24,15 +25,16 @@ function App() {
         <Route path="/signIn" element={<SignIn></SignIn>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/purchase/:toolId" element={<Purchase></Purchase>}></Route>
-        <Route path="/dashboard/addReview" element={<AddReview></AddReview>}></Route>
         {/* ======Dashboard====== */}
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+
           {/* <Route index element={<MyProfile></MyProfile>} />
-          <Route path="my-order" element={<MyOrder></MyOrder>}></Route>
-          <Route path="make-admin" element={<MakeAdmin></MakeAdmin>}></Route>
-          <Route path="manage-product" element={<ManageProducts></ManageProducts>}></Route>
-          <Route path="add-product" element={<AddProduct></AddProduct>}></Route>
-          <Route path="manage-order" element={<ManageAllOrders></ManageAllOrders>}></Route> */}
+          <Route path="myOrder" element={<MyOrder></MyOrder>}></Route>
+          <Route path="makeAdmin" element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path="manageTool" element={<ManageProducts></ManageProducts>}></Route>
+          <Route path="manageOrder" element={<ManageAllOrders></ManageAllOrders>}></Route> */}
+          <Route path="addTool" element={<AddaNewTool></AddaNewTool>}></Route>
+          <Route path="addReview" element={<AddReview></AddReview>}></Route>
         </Route>
       </Routes>
     </div>
