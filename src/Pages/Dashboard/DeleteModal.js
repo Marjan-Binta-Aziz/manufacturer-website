@@ -1,6 +1,6 @@
 import React from "react";
 
-const DeleteModal = ({ handleDelete, setModal }) => {
+const DeleteModal = ({ handleDelete, setModal, }) => {
   return (
     <div>
       <input type="checkbox" id="delete-modal" className="modal-toggle" />

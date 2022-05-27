@@ -9,9 +9,9 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import AddReview from "./Pages/Dashboard/AddReview";
 import AddaNewTool from "./Pages/Dashboard/AddaNewTool";
 import ManageTool from "./Pages/Dashboard/ManageTool";
+import AllUser from "./Pages/Dashboard/AllUser";
 // import MyOrder from "./Pages/Dashboard/MyOrder";
 // import MyProfile from "./Pages/Dashboard/MyProfile";
-// import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
 // import ManageProducts from "./Pages/Dashboard/ManageProducts";
 // import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders";
 
@@ -30,8 +30,8 @@ function App() {
 
           {/* <Route index element={<MyProfile></MyProfile>} />
           <Route path="myOrder" element={<MyOrder></MyOrder>}></Route>
-          <Route path="makeAdmin" element={<MakeAdmin></MakeAdmin>}></Route>
         <Route path="manageOrder" element={<ManageAllOrders></ManageAllOrders>}></Route> */}
+        <Route path="allUser" element={<AllUser></AllUser>}></Route>
         <Route path="manageTool" element={<ManageTool></ManageTool>}></Route>
           <Route path="addTool" element={<AddaNewTool></AddaNewTool>}></Route>
           <Route path="addReview" element={<AddReview></AddReview>}></Route>
