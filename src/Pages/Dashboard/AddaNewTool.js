@@ -28,8 +28,8 @@ const AddaNewTool = () => {
                 const min_ord_quantity = data.minQ;
                 const quantity = data.availQ;
                 const price = data.price;
-                const type = data.type;
-                const tool = { img, name, description, min_ord_quantity, quantity, price, type};
+                const toolType = data.type;
+                const tool = { img, name, description, min_ord_quantity, quantity, price, toolType};
                 //send to database
             fetch(`http://localhost:5000/tool`, {
                 method: "POST",
@@ -78,23 +78,7 @@ return (
           </span>
         )}
       </div>
-      <div className="form-control w-full max-w-lg">
-      <select
-              name="type"
-              id=""
-              className="select select-sm input input-sm  my-2 input-bordered input-primary w-full max-w-lg"
-            >
-                <option disabled selected>Tool Type?</option>
-                <option value="wooden">Wooden</option>
-                <option value="aluminum">Aluminum</option>
-                <option value="synthetic">Synthetic</option>
-            </select>
-        {errors.type?.type === "required" && (
-          <span className="label-text text-red-500">
-            Please Enter a Tool Type
-          </span>
-        )}
-      </div>
+      
       <div className="form-control w-full max-w-lg">
 
         <textarea
@@ -158,14 +142,29 @@ return (
           </span>
         )}
       </div>
-      <div className="form-control w-full max-w-lg my-2 input input-primary input-bordered">
+      <div className="form-control w-full max-w-lg">
+      <select name="toolType" id="" className="select select-sm input input-sm  my-2 input-bordered input-primary w-full max-w-lg">
+                <option disabled selected hidden>Tool Type?</option>
+                <option value="wooden">Wooden</option>
+                <option value="aluminum">Aluminum</option>
+                <option value="synthetic">Synthetic</option>
+                <option defaultValue='not-define'>Not Define</option>
+                
+              </select>
+          {errors.toolType?.type === "required" && (
+            <span className="label-text text-red-500">
+              Please Enter a Tool Type
+            </span>
+          )}
+        </div>
+        <div className="form-control w-full max-w-lg my-2 ">
         <input
           {...register("image", {
             required: true,
           })}
           placeholder=''
           type="file"
-          className="w-full max-w-lg"
+          className="w-full max-w-lg input input-primary input-bordered"
         />
         {errors.image?.type === "required" && (
           <span className="label-text text-red-500">Enter an image !</span>
