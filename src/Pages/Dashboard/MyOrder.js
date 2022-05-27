@@ -97,7 +97,7 @@ const MyOrder = ({refetch, isLoading}) => {
                     {(myOrder.price && !myOrder.paid) ? (
                       <>
                     <Link to={`/dashboard/payment/${myOrder._id}`} > 
-                    <button className='btn btn-xs btn-error'>Pay</button></Link> {" "}
+                    <button className='btn btn-xs btn-warning'>Pay</button></Link> {" "}
 
                     <label
                      htmlFor="delete-modal"

@@ -5,31 +5,15 @@ import { useQuery } from "react-query";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import useAdmin from "../../hooks/useAdmin";
+import Swal from "sweetalert2";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
-  //   const [isAdmin, loading] = useAdmin(user);
-
-  //   if (loading) {
-  //     <Loading />;
-  //   }
-
-  // const {
-  //   data: user,
-  //   isLoading,
-  //   error,
-  // } = useQuery(["usersByEmail", user?.email], () =>
-  //   fetch(
-  //     `http://localhost:5000/usersByEmail?email=${user?.email}`
-  //   ).then((res) => res.json())
-  // );
-
-  // if (error) {
-  //   toast.error(error.message);
-  // }
-  // if (isLoading) {
-  //   return <Loading />;
-  // }
+  const [isAdmin, loading] = useAdmin(user);
+  
+    if (loading) {
+      <Loading />;
+    }
 
   return (
     <div className="">
@@ -48,53 +32,34 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-60 bg-slate-100 rounded-2xl text-base-content">
             <li>
-              <Link to="/dashboard">My Profile</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/addReview">Add Review</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/addTool">Add a New Tool</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/manageTool">Manage Tool</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/myOrder">My Order</Link>
-            </li>
-
-            <li>
-              <Link to="/dashboard/manageOrder">Manage All Order</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/allUser">All Users</Link>
-            </li>
-
-            {/*   {isAdmin || (
+            <Link to="/dashboard">My Profile</Link>
+          </li>
+              {isAdmin || (
               <>
                 <li>
-                  <Link to="/dashboard/my-order">My Order</Link>
+                  <Link to="/dashboard/myOrder">My Order</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard/add-review">Add Review</Link>
+                  <Link to="/dashboard/addReview">Add Review</Link>
                 </li>
               </>
             )}
             {isAdmin && (
               <>
                 <li>
-                  <Link to="/dashboard/manage-all-order">Manage All Order</Link>
+                  <Link to="/dashboard/manageOrder">Manage All Order</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard/add-product">Add Product</Link>
+                  <Link to="/dashboard/addTool">Add Tool</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard/make-admin">Make Admin</Link>
+                  <Link to="/dashboard/allUser">All Users</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard/manage-product">Manage Product</Link>
+                  <Link to="/dashboard/manageTool">Manage Product</Link>
                 </li>
-              </> */}
+              </>
+            )}
           </ul>
         </div>
       </div>
