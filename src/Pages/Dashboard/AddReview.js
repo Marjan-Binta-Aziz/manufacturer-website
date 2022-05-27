@@ -56,7 +56,7 @@ const AddReview = () => {
         Swal.fire({
           icon: "success",
           title: "Thanks for your Feedback",
-          text: `reviewis added`,
+          text: `reviews added`,
       })
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -65,12 +65,13 @@ const AddReview = () => {
           <Rating
             onClick={handleRating}
             ratingValue={rating}
-            size={40}
+            size={30}
+            style= {{display: 'flex'}}
             label
             transition
-            fillColor='red'
+            fillColor='orange'
             emptyColor='gray'
-            className='w-full' // Will remove the inline style if applied
+            className='w-fit'
           />
           </div>
           <div className='mb-3'>
@@ -87,7 +88,7 @@ const AddReview = () => {
           <div className='mb-3'>
             <input
               type='email'
-              value={authUser.email}
+              value={authUser?.email}
               className="input input-bordered input-secondary input-sm w-full max-w-xs mt-4"
               id='floatingInput'
               {...register("Email")}

@@ -80,16 +80,13 @@ const Navbar = () => {
           </div>
           <Link to="/" className="font-bold normal-case text-2xl ml-40">Brush to Rush </Link>
         </div>
-        <Link className="w-32 ml-56" to='/'>
-          <img className="ml-7" src="https://i.ibb.co/ncrnV11/logo.png" alt="logo" /> </Link>
+        <div className="navbar-center lg:ml-56 md:ml-40 sm:ml-48">
+        <Link to='/'>
+          <img className="w-16" src="https://i.ibb.co/ncrnV11/logo.png" alt="logo" /> </Link>
+        </div>
           
         <div className="navbar hidden lg:flex">
           <ul className="menu menu-horizontal ml-auto p-0">{menuItems}</ul>
-        </div>
-        <div className="flex-none navbar-end lg:hidden">
-        <label htmlFor="dashboard-sidebar" className="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </label>
         </div>
       </div>
     </div>

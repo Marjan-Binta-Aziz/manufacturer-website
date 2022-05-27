@@ -6,7 +6,7 @@ import SignIn from "./Pages/User/SignIn";
 import SignUp from "./Pages/User/SignUp";
 import Purchase from "./Pages/Purchases/Purchase";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-// import AddReview from "./Pages/Dashboard/AddReview";
+import AddReview from "./Pages/Dashboard/AddReview";
 // import MyOrder from "./Pages/Dashboard/MyOrder";
 // import MyProfile from "./Pages/Dashboard/MyProfile";
 // import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
@@ -24,7 +24,7 @@ function App() {
         <Route path="/signIn" element={<SignIn></SignIn>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/purchase/:toolId" element={<Purchase></Purchase>}></Route>
-        {/* <Route path="/review" element={<AddReview></AddReview>}></Route> */}
+        <Route path="/dashboard/addReview" element={<AddReview></AddReview>}></Route>
         {/* ======Dashboard====== */}
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           {/* <Route index element={<MyProfile></MyProfile>} />

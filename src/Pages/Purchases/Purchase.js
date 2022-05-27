@@ -90,7 +90,7 @@ const Purchase = () => {
         Purchase
       </h2>
       <div className="flex flex-row-reverse gap-5 lg:col-span-2 sm:col-span-1">
-        <div className="card h-fit bg-base-100 shadow-xl w-5/12">
+        <div className="card h-fit bg-base-100 shadow-xl w-fit">
           <div className="card-body">
             <h2 className=" text-2xl font-bold">Name: {data.name}</h2>
             <p>Description: {data.description}</p>
