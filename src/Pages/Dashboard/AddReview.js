@@ -10,7 +10,7 @@ import { Rating } from "react-simple-star-rating";
 
 const AddReview = () => {
   const [rating, setRating] = useState(1); // initial rating value
-  const [authUser] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const [success, setSuccess] = useState(false);
   const { register, handleSubmit } = useForm();
   // Catch Rating value
@@ -21,18 +21,16 @@ const AddReview = () => {
   const onSubmit = (data) => {
     //  if user data is valid then
     if (!data.Name) {
-      return (
-        <Loading></Loading>
-      );
+      return <Loading></Loading>;
     } else {
       data.rating = rating;
-      if (authUser.photoURL) {
-        data.img = authUser.photoURL;
+      if (user.photoURL) {
+        data.img = user.photoURL;
       } else {
         data.img =
           "https://i.ibb.co/ZJPQfBr/115-1150152-default-profile-picture-avatar-png-green.jpg";
       }
-      
+
       //   fetch the post API
       fetch("http://localhost:5000/review", {
         method: "POST",
@@ -50,67 +48,66 @@ const AddReview = () => {
     }
   };
   return (
-    <div className='mx-auto'>
-      <p className='mb-md-5 mb-3'>Please Give Your Feedback</p>
+    <div className="mx-auto">
+      <p className="mb-md-5 mb-3">Please Give Your Feedback</p>
       {success ? (
         Swal.fire({
           icon: "success",
           title: "Thanks for your Feedback",
           text: `reviews added`,
-      })
+        })
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
-          
           <div className="">
-          <Rating
-            onClick={handleRating}
-            ratingValue={rating}
-            size={30}
-            style= {{display: 'flex'}}
-            label
-            transition
-            fillColor='orange'
-            emptyColor='gray'
-            className='w-fit'
-          />
+            <Rating
+              onClick={handleRating}
+              ratingValue={rating}
+              size={30}
+              style={{ display: "flex" }}
+              label
+              transition
+              fillColor="orange"
+              emptyColor="gray"
+              className="w-fit"
+            />
           </div>
-          <div className='mb-3'>
+          <div className="mb-3">
             <input
-              type='text'
+              type="text"
               className="input input-bordered input-primary input-sm w-full max-w-xs mt-2"
-              id='floatingInput'
-              value={authUser?.displayName}
+              id="floatingInput"
+              value={user?.displayName}
               {...register("Name")}
               required
             />
           </div>
 
-          <div className='mb-3'>
+          <div className="mb-3">
             <input
-              type='email'
-              value={authUser?.email}
+              type="email"
+              value={user?.email}
               className="input input-bordered input-primary input-sm w-full max-w-xs mt-2"
-              id='floatingInput'
+              id="floatingInput"
               {...register("Email")}
               required
             />
           </div>
 
-          <div className='mb-3'>
+          <div className="mb-3">
             <input
-              type='text'
+              type="text"
               placeholder="Message"
               className="input input-bordered input-primary input-sm w-full max-w-xs mt-2"
-              id='floatingInput'
+              id="floatingInput"
               {...register("message")}
               required
             />
           </div>
 
           <input
-            className='btn btn-primary px-3'
-            type='submit'
-            value='Add Feedback'
+            className="btn btn-primary px-3"
+            type="submit"
+            value="Add Feedback"
           />
         </form>
       )}

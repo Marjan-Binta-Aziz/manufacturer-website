@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 
-const useAdmin = (authUser) => {
+const useAdmin = (user) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useState(() => {
-    const email = authUser?.email;
+    const email = user?.email;
     if (email) {
-      fetch(
-        `http://localhost:5000/usersByEmail?email=${email}`
-      )
+      fetch(`http://localhost:5000/usersByEmail?email=${email}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.role === "admin") {
@@ -19,7 +17,7 @@ const useAdmin = (authUser) => {
           setLoading(false);
         });
     }
-  }, [authUser]);
+  }, [user]);
 
   return [isAdmin, loading];
 };

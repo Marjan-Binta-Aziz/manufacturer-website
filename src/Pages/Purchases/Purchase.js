@@ -7,7 +7,7 @@ import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 const Purchase = () => {
   const [disable, setDisable] = useState(false);
-  const [authUser] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const [quantity, setQuantity] = useState(0);
   const [loading, setLoading] = useState(false);
   const { toolId } = useParams();
@@ -25,8 +25,8 @@ const Purchase = () => {
     const minQuantity = parseInt(data.min_ord_quantity);
     const maxQuantity = parseInt(data.quantity);
     if (quantity >= minQuantity && quantity <= maxQuantity) {
-      const Name = authUser.displayName;
-      const email = authUser.email;
+      const Name = user.displayName;
+      const email = user.email;
       const phone = event.target.phone.value;
       const address = event.target.address.value;
       const toolId = data._id;
@@ -75,10 +75,10 @@ const Purchase = () => {
     }
     setLoading(false);
   };
-  const handleQuantity =(event) => {
+  const handleQuantity = (event) => {
     setQuantity(parseInt(event.target.value));
     setDisable(false);
-  }
+  };
 
   if (isLoading) {
     return <Loading></Loading>;
@@ -111,7 +111,7 @@ const Purchase = () => {
               <input
                 required
                 type="text"
-                value={authUser?.displayName}
+                value={user?.displayName}
                 disabled
                 className="input input-bordered input-primary w-full max-w-lg input-sm my-3"
               />
@@ -120,7 +120,7 @@ const Purchase = () => {
               <input
                 required
                 type="email"
-                value={authUser?.email}
+                value={user?.email}
                 disabled
                 className="input input-bordered input-primary w-full max-w-lg input-sm my-3"
               />
@@ -153,11 +153,8 @@ const Purchase = () => {
                 placeholder="Address"
               ></textarea>
             </div>
-            <button
-              disabled={disable}
-              className='btn btn-primary mt-5 w-full'
-            >
-            Buy now
+            <button disabled={disable} className="btn btn-primary mt-5 w-full">
+              Buy now
             </button>
           </form>
         </div>

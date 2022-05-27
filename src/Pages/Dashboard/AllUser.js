@@ -40,15 +40,20 @@ const AllUser = () => {
   const handleAdmin = (result) => {
     if (result) {
       fetch(`http://localhost:5000/usersById?id=${makeAdminId}`, {
-        method: "put",
+        method: "PUT",
         headers: {
           "content-type": "application/json",
         },
       })
         .then((res) => res.json())
         .then((data) => {
-          // console.log(data);
+          console.log(data);
           if (data.acknowledged) {
+            Swal.fire({
+              icon: "success",
+              title: "Done",
+              text: `${users.name} set as Admin Successfully`,
+            });
             refetch();
           }
         });
@@ -107,10 +112,6 @@ const AllUser = () => {
                       ) : (
                         <label
                           htmlFor="delete-modal"
-                          onClick={() => {
-                            setModal(true);
-                            setDeleteUserId(user._id);
-                          }}
                           className="btn btn-error btn-xs text-white"
                         >
                           Remove User

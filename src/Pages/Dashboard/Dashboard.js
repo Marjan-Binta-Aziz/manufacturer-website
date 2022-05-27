@@ -7,20 +7,20 @@ import Loading from "../Shared/Loading";
 import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
-  const [authUser] = useAuthState(auth);
-//   const [isAdmin, loading] = useAdmin(authUser);
+  const [user] = useAuthState(auth);
+  //   const [isAdmin, loading] = useAdmin(user);
 
-//   if (loading) {
-//     <Loading />;
-//   }
+  //   if (loading) {
+  //     <Loading />;
+  //   }
 
   // const {
   //   data: user,
   //   isLoading,
   //   error,
-  // } = useQuery(["usersByEmail", authUser?.email], () =>
+  // } = useQuery(["usersByEmail", user?.email], () =>
   //   fetch(
-  //     `http://localhost:5000/usersByEmail?email=${authUser?.email}`
+  //     `http://localhost:5000/usersByEmail?email=${user?.email}`
   //   ).then((res) => res.json())
   // );
 
@@ -47,7 +47,6 @@ const Dashboard = () => {
         <div className="drawer-side ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-60 bg-slate-100 rounded-2xl text-base-content">
-        
             <li>
               <Link to="/dashboard">My Profile</Link>
             </li>
