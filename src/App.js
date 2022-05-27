@@ -11,9 +11,8 @@ import AddaNewTool from "./Pages/Dashboard/AddaNewTool";
 import ManageTool from "./Pages/Dashboard/ManageTool";
 import AllUser from "./Pages/Dashboard/AllUser";
 import MyOrder from "./Pages/Dashboard/MyOrder";
-// import MyProfile from "./Pages/Dashboard/MyProfile";
-// import ManageProducts from "./Pages/Dashboard/ManageProducts";
-// import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders";
+import ManageOrder from "./Pages/Dashboard/ManageOrder";
+import MyProfile from "./Pages/Dashboard/MyProfile";
 
 function App() {
   return (
@@ -28,8 +27,8 @@ function App() {
         {/* ======Dashboard====== */}
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
 
-          {/* <Route index element={<MyProfile></MyProfile>} />
-        <Route path="manageOrder" element={<ManageAllOrders></ManageAllOrders>}></Route> */}
+        <Route index element={<MyProfile></MyProfile>} />
+        <Route path="manageOrder" element={<ManageOrder></ManageOrder>}></Route>
         <Route path="myOrder" element={<MyOrder></MyOrder>}></Route>
         <Route path="allUser" element={<AllUser></AllUser>}></Route>
         <Route path="manageTool" element={<ManageTool></ManageTool>}></Route>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useQuery } from "react-query";
 
 const useAdmin = (user) => {
   const [isAdmin, setIsAdmin] = useState(false);
