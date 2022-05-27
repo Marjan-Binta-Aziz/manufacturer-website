@@ -61,7 +61,7 @@ const Purchase = () => {
               title: "Booked",
               text: `You Booked ${toolsName} Price: ${price}`,
             });
-            navigate("/dashboard/my-order");
+            navigate("/dashboard/myOrder");
           }
         });
     } else {

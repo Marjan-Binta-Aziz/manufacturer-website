@@ -57,6 +57,9 @@ const Dashboard = () => {
               <Link to="/dashboard/addTool">Add a New Tool</Link>
             </li>
             <li>
+              <Link to="/dashboard/manageTool">Manage Tool</Link>
+            </li>
+            <li>
               <Link to="/dashboard/myOrder">My Order</Link>
             </li>
 
@@ -65,9 +68,6 @@ const Dashboard = () => {
             </li>
             <li>
               <Link to="/dashboard/allUser">All Users</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/manageTool">Manage Tool</Link>
             </li>
 
             {/*   {isAdmin || (
