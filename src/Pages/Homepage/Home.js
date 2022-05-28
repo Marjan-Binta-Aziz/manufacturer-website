@@ -3,6 +3,7 @@ import ToolsServices from '../Tools/ToolsServices';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
 import Contact from './Contact';
+import EasyPayment from './EasyPayment';
 import Reviews from './Reviews';
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <ToolsServices></ToolsServices>
             <BusinessSummary></BusinessSummary>
             <Reviews></Reviews>
+            <EasyPayment></EasyPayment>
             <Contact></Contact>
         </div>
     );

@@ -20,6 +20,7 @@ import RequireAdmin from "./Pages/Shared/RequireAdmin";
 import AllTools from "./Pages/Tools/AllTools";
 import AllReview from "./Pages/Homepage/AllReview";
 import Footer from "./Pages/Shared/Footer";
+import Blogs from "./Pages/Homepage/Blogs";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/allTools" element={<AllTools></AllTools>}></Route>
         <Route path="/all-review" element={<AllReview></AllReview>}></Route>
+        <Route path="/blog" element={<Blogs></Blogs>}></Route>
         <Route
           path="/purchase/:toolId"
           element={
