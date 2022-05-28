@@ -8,15 +8,15 @@ import useAdmin from '../../hooks/useAdmin';
 import Loading from './Loading';
 
 const RequireAdmin = ({children}) => {
-    const [user, loading, error] = useAuthState(auth);
-    const [admin,adminLoading] = useAdmin(user);
+    const [user, userLoading, error] = useAuthState(auth);
+    const [isAdmin, loading] = useAdmin(user);
     let location = useLocation();
 
     //loading use na korle abr login oagge e firiye dibe
-    if (loading || adminLoading) {
+    if (loading || userLoading) {
         return <Loading></Loading>
     }
-    if (!user || !admin) {
+    if (!isAdmin) {
         signOut(auth)
         return <Navigate to="/login" state={{ from: location }} replace ></Navigate>
     }

@@ -1,3 +1,5 @@
+import { faPaintbrush } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -83,8 +85,9 @@ const Navbar = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to="/" className="font-bold normal-case text-2xl ml-40 text-primary">
-            Brush to Rush{" "}
+          <Link to="/" className="font-bold normal-case text-2xl ml-16 text-primary">
+            <FontAwesomeIcon icon={faPaintbrush}/>{" "}
+            Brush to Rush
           </Link>
         </div>
         <div className="navbar-center lg:ml-56 md:ml-40 sm:ml-48">
