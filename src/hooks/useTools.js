@@ -8,7 +8,6 @@ useEffect(() => {
     fetch("http://localhost:5000/tool")
     .then((res) => res.json())
     .then((data) => {
-        console.log(data);
         setTools(data)});
 }, [tools]);
     return [tools, setTools];

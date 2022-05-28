@@ -13,7 +13,7 @@ const MyProfile = () => {
     fetch(`http://localhost:5000/usersByEmail?email=${user?.email}`)
     .then(res => res.json())
     )
-    console.log(data);
+    // console.log(data);
     if(error){
       Swal.fire({
         icon: "error",

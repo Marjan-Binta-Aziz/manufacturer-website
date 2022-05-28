@@ -4,14 +4,12 @@ import useTools from '../../hooks/useTools';
 
 const AllTools = () => {
     const [tools, setTools] = useTools();
-    console.log(tools);
     
 
     const navigate = useNavigate();
     
     const navigateToPurchase = id => {
         navigate(`/purchase/${id}`)
-        console.log(id);
     }
 
     return (
