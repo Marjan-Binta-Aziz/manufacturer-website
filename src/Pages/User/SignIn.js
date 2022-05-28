@@ -7,29 +7,31 @@ import Loading from "../Shared/Loading";
 import useToken from "../../hooks/useToken";
 
 const SignIn = () => {
-const navigate = useNavigate();
-const location = useLocation();
-
-let from = location.state?.from?.pathname || "/";
 const {register,formState: { errors },handleSubmit,} = useForm();
 
 const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
 const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
-const [token] = useToken(guser || user);
+const [token] = useToken(user || guser)
+console.log(token);
 
 let errorElement;
+const navigate = useNavigate();
+const location = useLocation();
+let from = location.state?.from?.pathname || "/";
 
 useEffect(() => {
         if (token) {
-        navigate(from, { replace: true });
+            navigate(from, { replace: true });
         }
-    }, [token]);
-
-    if (gloading || loading) {
+    }, [token,from,navigate]);
+    console.log('sigin token===', token);
+    
+    if (loading || gloading) {
         return <Loading></Loading>;
     }
-    if (gerror || error) {
+
+    if (error || gerror) {
         errorElement = (
         <small className="text-red-600">
             {error?.message || gerror?.message}
@@ -99,12 +101,11 @@ useEffect(() => {
                 </>
                 {errorElement}
 
-                <button
+                <input
                     type="submit"
                     className="btn btn-secondary w-full mt-5 "
-                >
-                    Sign In
-                </button>
+                    value="Sign In"
+                />
                 </form>
                 <p>
                 New to Doctor's Portal? {""}
