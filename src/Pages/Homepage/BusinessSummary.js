@@ -3,8 +3,8 @@ import React from 'react';
 const BusinessSummary = () => {
     return (
 <div className='p-5'>
-    <h2 className='text-5xl text-primary pb-4 uppercase'>Millions of Business Trust Us</h2>
-    <h2 className='text-3xl text-primary pb-4 uppercase'>Try To Understand Client Expectation</h2>
+    <h2 className='text-4xl text-accent pb-4 uppercase'>Millions of Business Trust Us</h2>
+    <h2 className='text-2xl text-accent pb-4 uppercase'>Try To Understand Client Expectation</h2>
     <div className="stats stats-vertical lg:stats-horizontal shadow w-full gap-5">
     <div className="p-5">
         <div className="stat-figure text-blue-600 p-2">

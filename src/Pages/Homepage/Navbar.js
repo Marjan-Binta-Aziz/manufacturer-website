@@ -21,7 +21,7 @@ const Navbar = () => {
         <Link to="/home">Home</Link>
       </li>
       <li>
-        <Link to="/allTools">All Tools</Link>
+        <Link to="/allTools">Tools</Link>
       </li>
       <li>
         <Link to="/review">Review</Link>
@@ -83,7 +83,7 @@ const Navbar = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to="/" className="font-bold normal-case text-2xl ml-40">
+          <Link to="/" className="font-bold normal-case text-2xl ml-40 text-primary">
             Brush to Rush{" "}
           </Link>
         </div>
