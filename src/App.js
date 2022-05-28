@@ -17,6 +17,7 @@ import UpdateProfile from "./Pages/Dashboard/UpdateProfile";
 import Payment from "./Pages/Dashboard/Payment";
 import RequireAuth from "./Pages/Shared/RequireAuth";
 import RequireAdmin from "./Pages/Shared/RequireAdmin";
+import AllTools from "./Pages/Tools/AllTools";
 
 function App() {
   return (
@@ -27,11 +28,13 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/signIn" element={<SignIn></SignIn>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
+        <Route path="/allTools" element={<AllTools></AllTools>}></Route>
         <Route path="/purchase/:toolId" element={
         <RequireAuth>
           <Purchase></Purchase>
         </RequireAuth>
         }></Route>
+
         {/* ======Dashboard====== */}
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
 

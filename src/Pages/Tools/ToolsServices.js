@@ -11,7 +11,7 @@ const ToolsServices = () => {
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-7 pt-5 text-center">
         {
-        tools?.map((tool) => (
+        tools.slice(0,3).map((tool) => (
           <ToolsService
             key={tool._id}
             tool={tool}

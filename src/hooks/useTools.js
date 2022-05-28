@@ -10,7 +10,7 @@ useEffect(() => {
     .then((data) => {
         console.log(data);
         setTools(data)});
-}, []);
+}, [tools]);
     return [tools, setTools];
 };
 
