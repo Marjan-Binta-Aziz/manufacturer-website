@@ -57,7 +57,7 @@ const AllUser = () => {
             Swal.fire({
               icon: "success",
               title: "Done",
-              text: `${users.name} set as Admin Successfully`,
+              text: `Admin Set Successfully`,
             });
             refetch();
           }
@@ -88,7 +88,7 @@ const AllUser = () => {
                 users.map((user, key) => (
                   <tr key={key}>
                     <th>{key + 1}</th>
-                    <td className=" capitalize">{user.name}</td>
+                    <td className=" capitalize">{user.displayName}</td>
                     <td>{user.email}</td>
                     <td>
                       {user.role === "admin" ? (

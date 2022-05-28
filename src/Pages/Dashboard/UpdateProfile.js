@@ -77,7 +77,7 @@ const UpdateProfile = () => {
             </label>
             <input
               type="text"
-              defaultValue={data.name || "none"}
+              defaultValue={data.displayName || "none"}
               disabled
               className="input input-bordered input-primary w-full max-w-lg"
             />

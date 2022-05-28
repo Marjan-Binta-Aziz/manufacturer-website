@@ -33,7 +33,7 @@ const MyProfile = () => {
       </h2>
       <div className="card w-full max-w-lg bg-base-100 shadow-xl mx-auto">
         <div className="card-body">
-          <p>Name: {data.name}</p>
+          <p>Name: {data.displayName}</p>
           <p>Email: {data.email} </p>
           <p>Role: {data.role || "user"} </p>
           <p>Address: {data.address || "none"} </p>

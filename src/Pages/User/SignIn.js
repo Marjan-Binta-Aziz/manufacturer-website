@@ -25,8 +25,7 @@ useEffect(() => {
             navigate(from, { replace: true });
         }
     }, [token,from,navigate]);
-    console.log('sigin token===', token);
-    
+        
     if (loading || gloading) {
         return <Loading></Loading>;
     }

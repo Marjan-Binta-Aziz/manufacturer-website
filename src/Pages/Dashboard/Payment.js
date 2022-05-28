@@ -29,7 +29,7 @@ const Payment = () => {
     <div className="w-fit text-center">
       <div className="card bg-base-100 shadow-xl my-12 flex justify-center">
         <div className="card-body">
-          <p className="text-success font-bold">Hello, {myOrder.Name}</p>
+          <p className="text-success font-bold">Hello, {myOrder.displayName}</p>
           <h2 className="text-center card-title">
             Please Pay for {myOrder.toolsName}
           </h2>
