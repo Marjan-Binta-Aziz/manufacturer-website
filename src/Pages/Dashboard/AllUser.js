@@ -16,7 +16,7 @@ const AllUser = () => {
     data: users,
     isLoading,
     refetch,
-  } = useQuery(["user"], () =>
+  } = useQuery(["users"], () =>
     fetch(`https://rocky-stream-44489.herokuapp.com/users`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -36,7 +36,9 @@ const AllUser = () => {
       }
     })
   );
-
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   const handleAdmin = (result) => {
     if (result) {
       fetch(
@@ -63,9 +65,7 @@ const AllUser = () => {
     }
   };
 
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
+
 
   return (
     <div className=" flex justify-center">
