@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   useSignInWithGoogle,
   useCreateUserWithEmailAndPassword,
@@ -24,6 +24,8 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth);
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
   const [token] = useToken(user || guser);
 
@@ -41,7 +43,8 @@ const SignUp = () => {
   }
 
   if (token) {
-    navigate("/appointment");
+    console.log("signIn",token);
+    navigate(from, { replace: true });
   }
 
   const onSubmit = async (data) => {

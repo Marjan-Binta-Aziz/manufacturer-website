@@ -7,11 +7,13 @@ import Loading from "../Shared/Loading";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { Rating } from "react-simple-star-rating";
+import { useNavigate } from "react-router-dom";
 
 const AddReview = () => {
   const [rating, setRating] = useState(1); // initial rating value
   const [user] = useAuthState(auth);
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate()
   const { register, handleSubmit } = useForm();
   // Catch Rating value
   const handleRating = (rate) => {
@@ -43,6 +45,7 @@ const AddReview = () => {
         .then((result) => {
           if (result.insertedId) {
             setSuccess(true);
+            navigate('/all-review')
           }
         });
     }
