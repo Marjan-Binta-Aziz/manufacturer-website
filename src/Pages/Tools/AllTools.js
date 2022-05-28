@@ -15,7 +15,8 @@ const AllTools = () => {
     return (
         <div>
             <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-7 pt-5 text-center'>
-            {tools.map(tool => <>
+            {
+            tools.map(tool => <>
                 <div className="card lg:max-w-lg bg-base-100 shadow-xl h-full">
             <div className="card-body text-center">
             <figure className="px-10 pt-10">

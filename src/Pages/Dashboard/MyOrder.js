@@ -8,20 +8,23 @@ import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import DeleteModal from "./DeleteModal";
 
-const MyOrder = ({refetch, isLoading}) => {
+const MyOrder = ({ refetch, isLoading }) => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
   const [deleteId, setDeleteId] = useState("");
   const [myOrder, SetMyOrder] = useState([]);
-  useEffect(()=>{
+  useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/bookingByEmail?email=${user?.email}`, {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      fetch(
+        `https://rocky-stream-44489.herokuapp.com/bookingByEmail?email=${user?.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
         .then((res) => {
           if (res.status === 401 || res.status === 403) {
             signOut(auth);
@@ -30,7 +33,7 @@ const MyOrder = ({refetch, isLoading}) => {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: `${res.statusText} Access!!! Please Login again`,
+              text: `${res.statusText} Access!!! Please signIn again`,
             });
           }
           return res.json();
@@ -39,25 +42,28 @@ const MyOrder = ({refetch, isLoading}) => {
           SetMyOrder(data);
         });
     }
-  }, [user])
+  }, [user]);
 
   const handleDelete = (result) => {
     if (result) {
       console.log(deleteId);
-      fetch(`http://localhost:5000/bookingById/${deleteId}`, {
-        method: "delete",
-        headers: {
-          "content-type": "application/json",
-        },
-      })
+      fetch(
+        `https://rocky-stream-44489.herokuapp.com/bookingById/${deleteId}`,
+        {
+          method: "delete",
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {
             Swal.fire({
-              icon: 'success',
-              title: 'Delete Successfully'
-          })
-          setDeleteId(null)
+              icon: "success",
+              title: "Delete Successfully",
+            });
+            setDeleteId(null);
             refetch();
           }
         });
@@ -94,31 +100,38 @@ const MyOrder = ({refetch, isLoading}) => {
                     <td>{myOrder.quantity} pcs</td>
                     <td>{myOrder.price} tk</td>
                     <td>
-                    {(myOrder.price && !myOrder.paid) ? (
-                      <>
-                    <Link to={`/dashboard/payment/${myOrder._id}`} > 
-                    <button className='btn btn-xs btn-warning'>Pay</button></Link> {" "}
-
-                    <label
-                     htmlFor="delete-modal"
-                     onClick={() => {
-                       setModal(true);
-                       setDeleteId(myOrder._id);
-                     }}
-                     className="btn btn-error btn-xs text-white"
-                   >
-                     Cancel
-                   </label>
-                      </>
-                    ):
-                    <div>
-                      <p><span className='btn btn-xs btn-success'>Paid</span></p>
-                      <small><b>Transaction id: </b><i className="text-red-600">{myOrder.transactionId}</i></small>
-                    </div>
-
-                  }
+                      {myOrder.price && !myOrder.paid ? (
+                        <>
+                          <Link to={`/dashboard/payment/${myOrder._id}`}>
+                            <button className="btn btn-xs btn-warning">
+                              Pay
+                            </button>
+                          </Link>{" "}
+                          <label
+                            htmlFor="delete-modal"
+                            onClick={() => {
+                              setModal(true);
+                              setDeleteId(myOrder._id);
+                            }}
+                            className="btn btn-error btn-xs text-white"
+                          >
+                            Cancel
+                          </label>
+                        </>
+                      ) : (
+                        <div>
+                          <p>
+                            <span className="btn btn-xs btn-success">Paid</span>
+                          </p>
+                          <small>
+                            <b>Transaction id: </b>
+                            <i className="text-red-600">
+                              {myOrder.transactionId}
+                            </i>
+                          </small>
+                        </div>
+                      )}
                     </td>
-
                   </tr>
                 ))}
             </tbody>

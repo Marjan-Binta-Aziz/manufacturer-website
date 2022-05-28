@@ -17,7 +17,7 @@ const AllUser = () => {
     isLoading,
     refetch,
   } = useQuery(["user"], () =>
-    fetch(`http://localhost:5000/users`, {
+    fetch(`https://rocky-stream-44489.herokuapp.com/users`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
@@ -31,7 +31,7 @@ const AllUser = () => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: `${res.statusText} Access!!! Please Login again`,
+          text: `${res.statusText} Access!!! Please signIn again`,
         });
       }
     })
@@ -39,12 +39,15 @@ const AllUser = () => {
 
   const handleAdmin = (result) => {
     if (result) {
-      fetch(`http://localhost:5000/usersById?id=${makeAdminId}`, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-      })
+      fetch(
+        `https://rocky-stream-44489.herokuapp.com/usersById?id=${makeAdminId}`,
+        {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -60,7 +63,6 @@ const AllUser = () => {
     }
   };
 
-
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -68,9 +70,7 @@ const AllUser = () => {
   return (
     <div className=" flex justify-center">
       <div className=" lg:pl-5 w-full">
-        <h2 className=" text-center text-primary text-4xl mb-5">
-          All Users 
-        </h2>
+        <h2 className=" text-center text-primary text-4xl mb-5">All Users</h2>
         <p>Total User : {users.length}</p>
         <div className="overflow-x-auto w-full">
           <table className="table w-full">
@@ -107,7 +107,7 @@ const AllUser = () => {
                       )}
                     </td>
                     <td>
-                    {user.role === "admin" ? (
+                      {user.role === "admin" ? (
                         ""
                       ) : (
                         <label
@@ -124,7 +124,9 @@ const AllUser = () => {
           </table>
         </div>
         {modal && (
-          <DeleteModal setModal={setModal} handleDelete={handleAdmin}
+          <DeleteModal
+            setModal={setModal}
+            handleDelete={handleAdmin}
           ></DeleteModal>
         )}
       </div>

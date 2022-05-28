@@ -13,8 +13,8 @@ const Purchase = () => {
   const { toolId } = useParams();
   const navigate = useNavigate();
   const { data, isLoading } = useQuery("toolsId", () =>
-    fetch(`http://localhost:5000/toolsId?id=${toolId}`).then((res) =>
-      res.json()
+    fetch(`https://rocky-stream-44489.herokuapp.com/toolsId?id=${toolId}`).then(
+      (res) => res.json()
     )
   );
 
@@ -45,7 +45,7 @@ const Purchase = () => {
         address,
       };
 
-      await fetch(`http://localhost:5000/booking`, {
+      await fetch(`https://rocky-stream-44489.herokuapp.com/booking`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

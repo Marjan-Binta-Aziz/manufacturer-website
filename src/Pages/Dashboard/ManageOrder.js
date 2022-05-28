@@ -18,7 +18,7 @@ const ManageOrder = () => {
     isLoading,
     refetch,
   } = useQuery(["manageOrder", user], () =>
-    fetch(`http://localhost:5000/booking`, {
+    fetch(`https://rocky-stream-44489.herokuapp.com/booking`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
@@ -32,19 +32,22 @@ const ManageOrder = () => {
         Swal.fire({
           icon: "error",
           title: "Done",
-          text: `${res.statusText} Access!!! Please Login again`,
+          text: `${res.statusText} Access!!! Please signIn again`,
         });
       }
     })
   );
   const handleDelete = (answer) => {
     if (answer) {
-      fetch(`http://localhost:5000/bookingById/${deleteId}`, {
-        method: "delete",
-        headers: {
-          "content-type": "application/json",
-        },
-      })
+      fetch(
+        `https://rocky-stream-44489.herokuapp.com/bookingById/${deleteId}`,
+        {
+          method: "delete",
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {

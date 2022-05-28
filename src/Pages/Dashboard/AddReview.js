@@ -32,7 +32,7 @@ const AddReview = () => {
       }
 
       //   fetch the post API
-      fetch("http://localhost:5000/review", {
+      fetch("https://rocky-stream-44489.herokuapp.com/review", {
         method: "POST",
         headers: {
           "content-type": "application/json",

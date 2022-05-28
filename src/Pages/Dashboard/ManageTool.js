@@ -11,21 +11,24 @@ const ManageTool = () => {
     isLoading,
     refetch,
   } = useQuery("tools", () =>
-    fetch(`http://localhost:5000/tool`, {
+    fetch(`https://rocky-stream-44489.herokuapp.com/tool`, {
       headers: {
-        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    }
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
     }).then((res) => res.json())
   );
 
   const handleDelete = (e) => {
     if (e) {
-      fetch(`http://localhost:5000/toolsById?id=${deleteId}`, {
-        method: "delete",
-        headers: {
-          "content-type": "application/json",
-        },
-      })
+      fetch(
+        `https://rocky-stream-44489.herokuapp.com/toolsById?id=${deleteId}`,
+        {
+          method: "delete",
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {
@@ -81,9 +84,9 @@ const ManageTool = () => {
             </tbody>
           </table>
         </div>
-         {modal && (
+        {modal && (
           <DeleteModal setModal={setModal} handleDelete={handleDelete} />
-        )} 
+        )}
       </div>
     </div>
   );
