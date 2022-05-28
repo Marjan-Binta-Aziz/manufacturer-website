@@ -21,6 +21,7 @@ import AllTools from "./Pages/Tools/AllTools";
 import AllReview from "./Pages/Homepage/AllReview";
 import Footer from "./Pages/Shared/Footer";
 import Blogs from "./Pages/Homepage/Blogs";
+import Protfolio from "./Pages/Shared/Protfolio";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/allTools" element={<AllTools></AllTools>}></Route>
         <Route path="/all-review" element={<AllReview></AllReview>}></Route>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
+        <Route path="/protfolio" element={<Protfolio></Protfolio>}></Route>
         <Route
           path="/purchase/:toolId"
           element={
