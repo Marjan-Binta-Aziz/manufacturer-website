@@ -17,7 +17,7 @@ const AllUser = () => {
     isLoading,
     refetch,
   } = useQuery(["users"], () =>
-    fetch(`https://rocky-stream-44489.herokuapp.com/users`, {
+    fetch(`http://localhost:5000/users`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
@@ -41,15 +41,12 @@ const AllUser = () => {
   }
   const handleAdmin = (result) => {
     if (result) {
-      fetch(
-        `https://rocky-stream-44489.herokuapp.com/usersById?id=${makeAdminId}`,
-        {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-        }
-      )
+      fetch(`http://localhost:5000/usersById?id=${makeAdminId}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -64,8 +61,6 @@ const AllUser = () => {
         });
     }
   };
-
-
 
   return (
     <div className=" flex justify-center">

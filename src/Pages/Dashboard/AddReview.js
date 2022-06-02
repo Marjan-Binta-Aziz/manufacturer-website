@@ -13,7 +13,7 @@ const AddReview = () => {
   const [rating, setRating] = useState(1); // initial rating value
   const [user] = useAuthState(auth);
   const [success, setSuccess] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   // Catch Rating value
   const handleRating = (rate) => {
@@ -34,7 +34,7 @@ const AddReview = () => {
       }
 
       //   fetch the post API
-      fetch("https://rocky-stream-44489.herokuapp.com/review", {
+      fetch("http://localhost:5000/review", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -45,7 +45,7 @@ const AddReview = () => {
         .then((result) => {
           if (result.insertedId) {
             setSuccess(true);
-            navigate('/all-review')
+            navigate("/all-review");
           }
         });
     }

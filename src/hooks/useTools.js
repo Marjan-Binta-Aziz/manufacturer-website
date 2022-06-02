@@ -4,8 +4,8 @@ const useTools = () => {
   const [tools, setTools] = useState([]);
 
   useEffect(() => {
-    /*      https://rocky-stream-44489.herokuapp.com/       */
-    fetch("https://rocky-stream-44489.herokuapp.com/tool")
+    /*      http://localhost:5000/       */
+    fetch("http://localhost:5000/tool")
       .then((res) => res.json())
       .then((data) => {
         setTools(data);

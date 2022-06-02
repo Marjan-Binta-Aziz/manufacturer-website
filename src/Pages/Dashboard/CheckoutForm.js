@@ -13,7 +13,7 @@ const CheckoutForm = ({ myOrder }) => {
   const { _id, price, name, email, treatment } = myOrder;
 
   useEffect(() => {
-    fetch("https://rocky-stream-44489.herokuapp.com/create-payment-intent", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -77,7 +77,7 @@ const CheckoutForm = ({ myOrder }) => {
         for: treatment,
         status: "paid",
       };
-      fetch(`https://rocky-stream-44489.herokuapp.com/bookingById/${_id}`, {
+      fetch(`http://localhost:5000/bookingById/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

@@ -16,15 +16,12 @@ const MyOrder = ({ refetch, isLoading }) => {
   const [myOrder, SetMyOrder] = useState([]);
   useEffect(() => {
     if (user) {
-      fetch(
-        `https://rocky-stream-44489.herokuapp.com/bookingByEmail?email=${user?.email}`,
-        {
-          method: "GET",
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-        }
-      )
+      fetch(`http://localhost:5000/bookingByEmail?email=${user?.email}`, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
         .then((res) => {
           if (res.status === 401 || res.status === 403) {
             signOut(auth);
@@ -47,15 +44,12 @@ const MyOrder = ({ refetch, isLoading }) => {
   const handleDelete = (result) => {
     if (result) {
       console.log(deleteId);
-      fetch(
-        `https://rocky-stream-44489.herokuapp.com/bookingById/${deleteId}`,
-        {
-          method: "delete",
-          headers: {
-            "content-type": "application/json",
-          },
-        }
-      )
+      fetch(`http://localhost:5000/bookingById/${deleteId}`, {
+        method: "delete",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {

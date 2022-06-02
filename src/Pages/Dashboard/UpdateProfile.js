@@ -9,9 +9,9 @@ const UpdateProfile = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const { isLoading, error, data, refetch } = useQuery(["updateUserInfo"], () =>
-    fetch(
-      `https://rocky-stream-44489.herokuapp.com/usersByEmail?email=${user?.email}`
-    ).then((res) => res.json())
+    fetch(`http://localhost:5000/usersByEmail?email=${user?.email}`).then(
+      (res) => res.json()
+    )
   );
   console.log(data);
   if (error) {
@@ -41,16 +41,13 @@ const UpdateProfile = () => {
       mobile,
     };
 
-    fetch(
-      `https://rocky-stream-44489.herokuapp.com/usersByEmail?email=${user?.email}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      }
-    )
+    fetch(`http://localhost:5000/usersByEmail?email=${user?.email}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

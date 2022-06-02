@@ -10,9 +10,9 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
 
   const { isLoading, error, data, refetch } = useQuery(["updateUserInfo"], () =>
-    fetch(
-      `https://rocky-stream-44489.herokuapp.com/usersByEmail?email=${user?.email}`
-    ).then((res) => res.json())
+    fetch(`http://localhost:5000/usersByEmail?email=${user?.email}`).then(
+      (res) => res.json()
+    )
   );
   // console.log(data);
   if (error) {

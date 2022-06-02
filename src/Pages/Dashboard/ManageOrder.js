@@ -18,7 +18,7 @@ const ManageOrder = () => {
     isLoading,
     refetch,
   } = useQuery(["manageOrder", user], () =>
-    fetch(`https://rocky-stream-44489.herokuapp.com/booking`, {
+    fetch(`http://localhost:5000/booking`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
@@ -39,15 +39,12 @@ const ManageOrder = () => {
   );
   const handleDelete = (answer) => {
     if (answer) {
-      fetch(
-        `https://rocky-stream-44489.herokuapp.com/bookingById/${deleteId}`,
-        {
-          method: "delete",
-          headers: {
-            "content-type": "application/json",
-          },
-        }
-      )
+      fetch(`http://localhost:5000/bookingById/${deleteId}`, {
+        method: "delete",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {

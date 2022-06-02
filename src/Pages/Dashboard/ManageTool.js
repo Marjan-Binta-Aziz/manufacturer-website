@@ -11,7 +11,7 @@ const ManageTool = () => {
     isLoading,
     refetch,
   } = useQuery("tools", () =>
-    fetch(`https://rocky-stream-44489.herokuapp.com/tool`, {
+    fetch(`http://localhost:5000/tool`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
@@ -20,15 +20,12 @@ const ManageTool = () => {
 
   const handleDelete = (e) => {
     if (e) {
-      fetch(
-        `https://rocky-stream-44489.herokuapp.com/toolsById?id=${deleteId}`,
-        {
-          method: "delete",
-          headers: {
-            "content-type": "application/json",
-          },
-        }
-      )
+      fetch(`http://localhost:5000/toolsById?id=${deleteId}`, {
+        method: "delete",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {

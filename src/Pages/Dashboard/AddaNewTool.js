@@ -44,7 +44,7 @@ const AddaNewTool = () => {
             toolType,
           };
           //send to database
-          fetch(`https://rocky-stream-44489.herokuapp.com/tool`, {
+          fetch(`http://localhost:5000/tool`, {
             method: "POST",
             headers: {
               "content-type": "application/json",
